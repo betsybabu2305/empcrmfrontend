@@ -1,0 +1,41 @@
+
+<!-- <pre>{{employees|json}}</pre> -->
+<div class="container">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <h3 class="text-center">Employee List</h3>
+            <a routerLink="emp-add" class="btn btn-outline-secondary btn-sm">Add New Employee</a>
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Name</th>
+                        <th>Department</th>
+                        <th>Salary</th>
+                        <th>Address</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let emp of employees ">
+                        <td>{{emp.name}}</td>
+                        <td>{{emp.department}}</td>
+                        <td>{{emp.salary}}</td>
+                        <td>{{emp.address}}</td>
+                        <td>{{emp.phone}}</td>
+                        <td>{{emp.email}}</td>
+                        <td>
+                            <a href="" class="btn btn-outline-primary btn-sm" [routerLink]="['emp-detail',emp.id]">VIEW</a>                            
+                            <a href="" class="btn btn-outline-info btn-sm"[routerLink]="['emp-edit',emp.id]">UPDATE</a>
+                        <button class="btn btn-outline-danger btn-sm" (click)="deleteEmployee(emp.id)">DELETE</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+            
+        <div class="col-1"></div>
+    </div>
+</div>
